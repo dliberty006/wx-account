@@ -1,0 +1,77 @@
+<view class='blank'>
+<view class='ji_title'>
+  <view class='ji_left ' data-type='0' bindtap='changeType'><view class='ji_left_con ml132 {{cateType=="0" ? "bg_1" : ""}}'>支出</view></view>
+  <view class=' ji_left ' data-type='1' bindtap='changeType'><view class='ji_left_con ml80 {{cateType=="1" ? "bg_1" : ""}}'>收入</view></view>
+</view>
+<form bindsubmit='submit' report-submit='true'>
+  <view class='ji_money'>
+    <view class='ji_sel'>
+      <view class='w'>
+        <view style='margin-right: -15rpx;'>
+        <block wx:for="{{cateList}}" wx:key="id" wx:for-index="idx">
+          <view class='ji_li {{idx == selectLi ? "bg_2" : ""}}' data-index='{{idx}}' bindlongpress='delLi' bindtap='clickLi'>{{item.cateName}}          
+          </view>
+        </block>
+        </view>
+        <view class='ji_add_li'>
+          <input placeholder='+添加类型' confirm-type='done' bindblur='addCateConfirm' placeholder-class='add_li_placeholder' bindinput='cateInput'  value="{{cateName}}"></input>
+        </view>
+      </view>
+      <view class='tishi'>长按分类可以删除不需要的分类</view>
+    </view>
+  </view>
+  <view class='ji_time'>
+    
+    <view class='ji_time_li ji_time_remark_parent'>
+        <view class='w'>
+          <image src='../../img/icon/je.png'></image>
+          <text class='ji_time_title'>金额：</text>
+          <input placeholder='请输入金额' value='{{accountMoneys}}' bindinput="changeMoney" type='digit' maxlength='10'></input>
+        </view>
+      </view>
+      <view class='ji_time_li'>
+        <view class='w'>
+        <image src='../../img/icon/rq.png'></image>
+        <picker mode="date" style='display:inline-block;' bindchange="changeDate" value="{{date}}" start="2018-01-01" end="{{currentDate}}" bindchange="bindDateChange">
+          <view class="picker">
+            <text class='ji_time_title'>日期：</text> {{date}}
+          </view>
+        </picker>
+        </view>
+      </view>
+      
+      <view class='ji_time_li ji_time_remark_parent'>
+        <view class='w'>
+          <image src='../../img/icon/bz.png'></image>
+          <text class='ji_time_title'>备注：</text>
+          <input bindinput='changeRemarks' maxlength='15' value='{{remarks}}' placeholder='备注，{{cateType=="0" ? "类如早餐" : "类如工资"}}'></input>
+          <text class='ji_time_num'>{{remarksCount}}/15</text>
+        </view>
+      </view>
+    </view>
+  
+  <view class='ji_button'>
+    <view class='w'>
+      <button disabled='{{butDisable}}'  form-type='submit'>提交</button>
+    </view>
+  </view>
+</form>
+</view>
+
+<!-- <ad unit-id="adunit-aa0b3455e967b329"></ad> -->
+<!-- <video style="width:100%;" unit-id="adunit-c652d24d857d9d1e"></video> -->
+
+<!-- <ad style="width:100%;" unit-id="adunit-e14906e77d28e89b" ad-type="video" ad-theme="white"></ad> -->
+
+<view class='meng {{showMeng == true ? "":"hide"}}' bindtouchstart='cancelMeng'></view>
+<view class='delete {{showDelete == true ? "":"hide"}}'>
+  <view bindtap='delCate' data-index='{{delIndex}}'>删除"{{delName}}"</view>
+</view>
+<view class='finish {{showFinish == true ? "":"hide"}}'>
+  <view class='finish_logo'><image src='../../img/icon/finish.png'></image></view>
+  <view class="finish_zi">提交完成！</view>
+  <view class='finish_footer'>
+    <view class='fl' bindtap='againRecord'>再记一笔</view>
+    <view class='fr' bindtap='finishRecord'>完成记账</view>
+  </view>
+</view>

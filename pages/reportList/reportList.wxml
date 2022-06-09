@@ -1,0 +1,28 @@
+<view class='body_title'>
+    <view class='body_title_time'>{{beginTime}}至{{endTime}}</view>
+    <view style="position:absolute;top:30rpx;right:60rpx;font-weight:bold;">{{money}}</view>
+</view>
+<view class='body_desc'>
+ <!-- <ad style="width:100%;" unit-id="adunit-e14906e77d28e89b" ad-type="video" ad-theme="white"></ad> -->
+  <!-- <ad unit-id="adunit-cb1476ba2893dc2c"></ad> -->
+  <view class='body_list_desc'>
+  <block wx:for="{{reportList}}" wx:key="id" wx:for-item="record" wx:for-index="reIdx">
+
+    <view class='body_list_desc_li'   >
+      <view bindtap='modifyAccount' >
+      <view class='fl '>
+        <view class="first_name {{record.cateType == '0' ? 'green':'red'}}">{{record.firstName}}</view>
+      </view>
+
+      <view class='fr'>
+        <view class='left'>
+          <view>{{record.cateName}}<text>({{record.accountTime}})</text></view>
+          <view class='remarks'>{{record.accountRemarks}}</view>
+        </view>
+        <view class='right {{record.cateType == "0" ? "":"red"}}'><block wx:if="{{record.cateType == '0'}}">-</block>{{record.accountMoney/100}}</view>
+      </view>
+      </view>
+    </view>
+  </block>
+  </view>
+</view>

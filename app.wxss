@@ -1,0 +1,11 @@
+.fl,.left{float: left;}
+.fr,.right{float: right;}
+page{
+  font-size: 28rpx;
+}
+input{
+  display: inline-block;
+}
+.hide{
+  display: none;
+}

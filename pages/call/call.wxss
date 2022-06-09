@@ -1,0 +1,23 @@
+
+.callBtn{
+  font-size: 17pt;
+  font-weight: 500;
+  line-height: 85rpx;
+  height: 85rpx;
+  background: #22a484;
+  color: #fff;
+  text-align: center;
+  border-radius: 100rpx;
+  margin: 40rpx 20%;
+}
+.callImg{
+  height: 1000rpx;
+  width: 750rpx;  
+  position: absolute;
+  padding-top: 20rpx 
+}
+.callView{
+  position: fixed;
+  padding-top: 800rpx;
+  width: 750rpx
+}

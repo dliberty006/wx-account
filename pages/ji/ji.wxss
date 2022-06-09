@@ -1,0 +1,222 @@
+.bg_1{
+  color: #22a484;
+  border-bottom: 4rpx solid #22a484;
+}
+.bg_2{
+  color: #fff;
+  background: #22a484;
+  border: 1px solid #22a484 !important;
+}
+.w{
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+.ji_title{
+  width: 100%;
+  text-align: center;
+  height: 95rpx;
+  border-bottom: 1px solid #ddd;
+  font-size:40rpx;
+}
+
+.ji_title .ji_left{
+  width: 50%;
+  float: left;
+  height:93rpx;
+  line-height: 93rpx;
+}
+.ji_title .ji_left .ji_left_con{
+  width: 44%;
+}
+.ml132{
+  margin-left: 132rpx;
+}
+.ml80{
+  margin-left: 80rpx;
+}
+.ji_money{
+  width: 100%;
+}
+
+.ji_money .ji_sel{
+  overflow: hidden; 
+  padding:45rpx 0;
+}
+.ji_li{
+  float: left;
+  border: 1px solid #000;
+  border-radius: 30rpx;
+  width:17%;
+  height: 45rpx;
+  line-height: 45rpx;
+  text-align: center;
+  margin: 15rpx 10rpx 15rpx 0;
+  font-size: 32rpx;
+}
+
+.ji_add_li {
+  border: 1px dashed #ccc;
+  border-radius: 20rpx;
+  float: left;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 32rpx;
+  margin: 15rpx 7rpx;
+}
+
+.ji_add_li input{
+  line-height:45rpx;
+  height:45rpx;
+  min-height:30rpx;
+  width:155rpx;
+}
+
+.ji_time{
+  padding: 20rpx 0;
+}
+.ji_time .ji_time_li{
+  border-top: 1rpx solid #c9c9c9;
+  height: 82rpx;
+  line-height: 82rpx;
+}
+.ji_time .ji_time_li:last-child{
+   border-bottom: 1rpx solid #c9c9c9;
+}
+
+.ji_time .ji_time_remark_parent{
+  position: relative;
+}
+.ji_time .ji_time_remark{
+  position: absolute;
+  top: 10rpx;
+  left: 0;
+} 
+.ji_time .ji_time_li input{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left:165rpx;
+}
+.ji_time .ji_time_li image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 16rpx;
+  display: inline-block;
+  position: relative;
+  top: 5rpx;
+}
+.ji_time .ji_time_li .ji_time_num{
+ position:absolute;
+  top:0;
+  right:36rpx;
+  color:#bbb;
+  height:100%;
+
+}
+.ji_button {
+  margin-top: 84rpx;
+}
+.ji_button button{
+  width: 356rpx;
+  height: 77rpx;
+  line-height: 77rpx;
+  background-color: #22a484;
+  color: #fff;
+  border-radius:40rpx;
+  letter-spacing:10rpx;
+  font-size: 40rpx;
+}
+
+.delImage{
+  width: 40rpx;
+  height: 40rpx
+}
+
+.meng{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 99998;
+  opacity:0.5;
+}
+.delete{
+  height: 75rpx;
+  width: 70%;
+  background: #fff;
+  color: #000;
+  position: fixed;
+  top: 40%;
+  left: 15%;
+  border-radius: 10rpx;
+  z-index: 99999;
+}
+.delete view{
+  height: 75rpx;
+  width: 100%;
+  line-height: 75rpx;
+  padding-left: 50rpx;
+  box-sizing: border-box;
+}
+.delete .modify{
+  border-bottom: 1px solid #ddd;
+}
+.tishi{
+  clear:both;
+  font-size:24rpx;
+  padding:10rpx 0 0 45rpx;
+  color:#9e9e9e;
+}
+
+.finish{
+  height: 470rpx;
+  width: 435rpx;
+  background: #fff;
+  color: #000;
+  position: fixed;
+  top: 30%;
+  left: 157.5rpx;
+  border-radius: 20rpx;
+  z-index: 99999;
+}
+.finish .finish_logo{
+  width: 147rpx;
+  height: 147rpx;
+  position: absolute;
+  top: 85rpx;
+  left: 144rpx;
+}
+.finish .finish_zi{
+  position: absolute;
+  top: 275rpx;
+  left: 135rpx;
+  font-size: 40rpx;
+}
+.finish .finish_logo image{
+  width: 100%;
+  height: 100%;
+}
+.finish .finish_footer{
+  height: 96rpx;
+  line-height: 96rpx;
+  width: 100%;
+  border-top: 1rpx solid #ddd;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.finish .finish_footer view{
+  text-align: center;
+  width: 49.5%;
+  color: #28a482;
+}
+.finish .finish_footer .fl{
+  border-right: 1rpx solid #ddd;
+}
+.blank{
+  margin-bottom: 84rpx;
+}

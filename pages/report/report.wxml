@@ -1,0 +1,66 @@
+<view class="body">
+    <view class="time">
+      <view class='fl time-fl'>
+          <view class="li selectTime">
+          <picker mode="date" bindchange="activity_report_history" value="{{beginTime}}"   end="{{endYear}}-{{endMonth}}-{{endDay}}" fields="day"> 
+          {{beginTime}}
+          <view class="sanjiao"><image src='../../img/icon/activity.png'></image></view>
+           </picker>
+           
+        </view>
+        <view class="li">至</view>
+        <view class="li selectTime">
+          <picker mode="date" bindchange="activity_report_history2" value="{{endTime}}"    end="{{endYear}}-{{endMonth}}-{{endDay}}" fields="day"> 
+          {{endTime}}
+          <view class="sanjiao"><image src='../../img/icon/activity.png'></image></view>
+          </picker>
+        </view>
+      </view>
+      <view class='fr time-fl'>
+        
+      </view>  
+    </view>
+    <!-- <ad style="width:100%;" unit-id="adunit-e14906e77d28e89b" ad-type="video" ad-theme="white"></ad>  -->
+  <block wx:if="{{accountMoney > 0}}">
+    <view class='account'>
+      <view class="w">
+        <view class="account_desc">
+          <view class="fl">消费</view>
+          <view class="fr">-{{accountMoney}}</view>
+        </view>
+      </view>
+      <view class="container">
+        <canvas canvas-id="ringCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+      </view>
+      <view class="list_item">
+        <view class="ts">点击类别看查看详细明细</view>
+        <block wx:for="{{reportList}}" wx:key="name">
+          <view class="lb" data-name="{{item.name}}" data-money="{{item.data/100}}" data-type="0" bindtap="goitem">{{item.name}}</view>
+        </block>
+      </view>
+    </view>
+    
+    </block>
+    <!-- <ad unit-id="adunit-e8f9b38a04b238aa"></ad> -->
+    <block wx:if="{{comeinMoney > 0}}">
+      <view class='income'>
+        <view class="w">
+          <view class="account_desc">
+            <view class="fl">收入</view>
+            <view class="fr">{{comeinMoney}}</view>
+          </view>
+        </view>
+        <view class="container">
+          <canvas canvas-id="ringCanvas2" class="canvas" bindtouchstart="touchHandler2"></canvas>
+        </view>
+        <view class="list_item">
+        <view class="ts">点击类别看查看详细明细</view>
+        <block wx:for="{{comeinList}}" wx:key="name">
+          <view class="lb" data-name="{{item.name}}" data-type="1" data-money="{{item.data/100}}" bindtap="goitem">{{item.name}}</view>
+        </block>
+      </view>
+      </view>
+    </block>
+</view>
+
+

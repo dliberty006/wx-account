@@ -1,0 +1,29 @@
+<!--start.wxml-->
+<view class="container">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="/img/more/loading.gif"></image>
+  </view>
+  <block wx:else>
+      <image class="title_shou" src="/img/more/shou.png"></image>
+      <image class="title" src="/img/more/title8.png"></image>
+    
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <!--<image class="logo" src="{{userInfo.avatarUrl}}"></image>-->
+        
+            <open-data class='logo' type="userAvatarUrl"></open-data>
+             
+        <image class="wave" src="/img/more/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/img/more/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+         <image class="smalltitle" src="/img/more/confirm-word1.png"></image>
+        <view class="confirm-btn" bindtap='goToIndex'>
+          <text >开始记账</text>
+        </view>
+        <button open-type="share" class='share'>分享好友</button>
+        
+      </view>
+    </view>
+  </block>
+</view>

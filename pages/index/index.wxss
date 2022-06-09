@@ -1,0 +1,567 @@
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; 
+  width: 100%;
+  height: 490rpx;
+}
+.title {
+  width: 100%;
+  height: 400rpx; 
+}
+.title .head_img {
+  width: 50%;
+  text-align: center;
+  padding-top: 10rpx;
+}
+
+.title .head_img .ji {
+  margin-top: 75rpx;
+  background-color: #f00;
+  color: #fff;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 60%;
+}
+
+.title .head_img .image {
+  width: 161rpx;
+  height: 161rpx;
+  border-radius: 50%;
+  margin-top: 20rpx;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.title .head_img .head_name {
+  line-height: 48rpx;
+  height: 48rpx;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+}
+
+.title .head_pro {
+  color: red;
+  padding-top: 200rpx;
+  float: right;
+}
+
+.title .history {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  /* height: 50rpx; */
+  color: #fff;
+}
+
+.title .history .zi {
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-left:10rpx;
+}
+
+.title .history image {
+   width: 40rpx; 
+   height: 40rpx; 
+}
+
+
+.title .email {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  /* height: 50rpx; */
+  color: #fff;
+}
+
+.title .email .zi {
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-left:10rpx;
+}
+
+.title .email image {
+   width: 40rpx; 
+   height: 40rpx; 
+}
+
+.title .remind {
+  position: absolute;
+  top: 80rpx;
+  right: 20rpx;
+  /* height: 50rpx; */
+  color: #fff;
+}
+
+.title .remind .zi {
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-left:10rpx;
+}
+
+.title .remind image {
+   width: 40rpx; 
+   height: 40rpx; 
+}
+
+.body_title {
+  width: 100%;
+  height: 181rpx;
+  background-color: #fff;
+}
+
+.body_title .body_title_time {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  padding-top: 15rpx;
+}
+
+.body_title .body_tilte_acc {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+
+.body_title text {
+  color: #aaa;
+  margin-right: 10rpx;
+}
+
+.fr_history .history_meng {
+  position: absolute;
+  width: 80rpx;
+  height: 90rpx;
+  background: #69c3aa;
+  z-index: 99998;
+  top: 15rpx;
+  right: 30rpx;
+  border-radius: 15rpx;
+  padding-top: 20rpx;
+}
+
+.body {
+  margin-top:490rpx;
+  width: 100%;
+}
+.body_desc{
+  position: relative;
+}
+.body_desc .body_list{
+  width: 95%;
+  margin: 0 auto;
+  border-radius:10rpx;
+  box-shadow:0rpx 5rpx 12rpx #eae9e8;
+  margin-bottom: 20rpx;
+}
+.body_desc .body_list:first-child{
+  margin-top: 27rpx;
+}
+
+.body_desc .body_list .body_list_title {
+  width: 100%;
+  height: 60rpx;
+}
+
+.body_desc .body_list .body_list_title view {
+  margin: 10rpx 20rpx;
+}
+
+.body_desc .body_list_desc {
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.body_desc .body_list_desc .body_list_desc_li {
+  height: 120rpx;
+  line-height: 120rpx;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.body_desc .body_list_desc .body_list_desc_li:first-child{
+  border-top: 1px solid #ddd;
+}
+.body_desc .body_list_desc .body_list_desc_li:last-child{
+  border-bottom: none;
+}
+
+.body_desc .body_list_desc .fl {
+  width: 15%;
+  text-align: center;
+}
+
+.body_desc .body_list_desc .fl .first_name {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 50rpx;
+  line-height: 80rpx;
+  margin-top: 20rpx;
+}
+
+.body_desc .body_list_desc .fr {
+  width: 85%;
+  
+}
+
+
+.body_desc .body_list_desc .fr .left view {
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+
+.body_desc .body_list_desc .fr .right {
+  font-size: 35rpx;
+  font-weight: 600;
+  padding-right: 20rpx;
+}
+
+.body_desc .body_list_desc .fr .remarks {
+  color: #aaa;
+}
+
+.body_desc .body_list_desc .fl .red {
+  background-color: #ff6454;
+}
+
+.body_desc .body_list_desc .fr .red {
+  color: #ff6454;
+}
+.body_desc .body_list_desc .fr .green {
+  color: #51a284;
+}
+
+.body_desc .body_list_desc .fl .green {
+  background-color: #51a284;
+}
+
+.meng {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 99998;
+  opacity: 0.5;
+}
+
+.body .time .fl_activity {
+  width: 65rpx;
+  height: 70rpx;
+  float: right;
+  padding-right: 20rpx;
+  padding-top: 18rpx;
+}
+
+.delete {
+  height: 150rpx;
+  width: 70%;
+  background: #fff;
+  color: #000;
+  position: fixed;
+  top: 40%;
+  left: 15%;
+  border-radius: 10rpx;
+  z-index: 99999;
+}
+
+.delete view {
+  height: 75rpx;
+  width: 100%;
+  line-height: 75rpx;
+  padding-left: 50rpx;
+  box-sizing: border-box;
+}
+
+.delete .modify {
+  border-bottom: 1px solid #ddd;
+}
+
+.shouru {
+  color: blanchedalmond;
+  float: left;
+  padding-top: 30rpx;
+  padding-left: 100rpx;
+}
+
+.zhichu {
+  color: blanchedalmond;
+  float: left;
+  padding-top: 30rpx;
+  padding-left: 100rpx;
+}
+
+.BudgetStyle {
+  font-size: 8pt;
+  position: fixed;
+  margin-left: 330rpx;
+  margin-top: -80rpx;
+}
+
+.jiz {
+  position: fixed;
+  width: 141rpx;
+  height: 141rpx;
+  bottom: 59rpx;
+  right: 27rpx;
+  border-radius: 50%;
+  background: #51a284;
+  box-shadow:2rpx 5rpx 20rpx #888;
+
+}
+
+
+.jiz text {
+  font-size: 26rpx;
+  color: #fff;
+  position: absolute;
+  top: 60.9%;
+  left: 21.2%;
+}
+.jiz image{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 26rpx;
+  left:45rpx;
+}
+
+body {
+  
+  width: 800px;
+  margin: 0 auto;
+  background: #418940;
+}
+
+.waiyuan {
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(0deg);
+  margin: 0 auto;
+}
+
+.waiyuan .yusuanshengyu {
+  position: absolute;
+  top: 40rpx;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin:0 auto;
+  width:100%;
+
+}
+
+.waiyuan .yusuanshengyu .shengyu {
+  padding: 0 0 10rpx 5rpx;
+}
+
+.waiyuan .yusuanshengyu .shengyumoney {
+  font-size: 40rpx;
+}
+
+.waiyuan .yusuan {
+  position: absolute;
+  top: 160rpx;
+  left: 65rpx;
+  font-size: 26rpx;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 20rpx;
+  padding: 7rpx;
+}
+
+.neiyuan {
+  width: 600px;
+  position: absolute;
+  left: 0;
+}
+
+.neiyuan .wave {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.2;
+  animation: wave 10s linear infinite;
+}
+
+.neiyuan .wave1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -100px;
+  top: 0;
+  opacity: 0.2;
+  animation: wave1 10s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translate3d(0px, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(-150px, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-300px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-150px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0px, 0, 0);
+  }
+}
+
+@keyframes wave1 {
+  0% {
+    transform: translate3d(-300px, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(-150px, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-150px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-300px, 0, 0);
+  }
+}
+
+.shuju {
+  width: 95%;
+  color: #000;
+  font-size: 28rpx;
+  text-align: center;
+  background: #fff;
+  height: 140rpx;
+  line-height: 50rpx;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 5rpx 5rpx #ddd;
+  position: absolute;
+  top: 336rpx;
+  left: 2.5%;
+}
+
+.shuju .li {
+  width: 33%;
+  height: 100%;
+}
+.shuju .li .shuju_title{
+  padding-top: 20rpx;
+}
+.shuju .li .shuju_shouru{
+  color:   #51a284;
+}
+.shuju .li .shuju_zhichu{
+  color: #ff6454;
+}
+
+.shuju .pl {
+  border-right: 1px solid #ddd;
+}
+
+
+.setbudget {
+  position:relative;
+  z-index:99999;
+}
+.no_record{
+  width: 336rpx;
+  height: 256rpx;
+  position: absolute;
+  top: 188rpx;
+  left:221rpx;
+}
+
+.modal-mask {
+  position:fixed;
+  top: 0;
+  left: 0;
+  z-index:99998;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}
+.setEmail{
+  z-index: 99999;
+  background: #fff;
+  width: 489rpx;
+  height: 595rpx;
+  position: fixed;
+  top: 280rpx;
+  left: 132rpx;
+  border-radius: 20rpx;
+}
+.setEmail .e_time,.setbudget .e_time {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  font-size: 18rpx;
+}
+.setEmail .e_p{
+  font-size: 36rpx;
+  margin: 97rpx 83rpx 71rpx;
+  font-weight: 600;
+  text-align: center;
+}
+.setEmail .e_input{
+  width: 398rpx;
+  border: 1rpx solid #333;
+  margin: 0 auto;
+  height: 59rpx;
+  line-height: 59rpx;
+  display:block;
+  border-radius:30rpx;
+  padding-left:30rpx;
+  box-sizing:border-box;
+  text-align: center;
+  font-size: 30rpx;
+}
+.setEmail .e_button{
+  width: 337rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  background: #65a185;
+  color: #fff;
+  font-size: 26rpx;
+  margin-top: 63rpx;
+  margin-bottom: 45rpx;
+  border-radius: 30rpx;
+}
+.setEmail .e_remark{
+  font-size: 22rpx;
+  color: #333;
+  line-height: 30rpx;
+  width: 429rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+.setEmail .e_remind{
+  font-size:50rpx;
+}

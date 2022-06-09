@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/report/report",
+    "pages/ji/ji",
+    "pages/reportList/reportList",
+    "pages/call/call"
+  ],
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#5dae98",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/icon/home.png",
+        "selectedIconPath": "img/icon/home_s.png"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "报表",
+        "iconPath": "img/icon/report.png",
+        "selectedIconPath": "img/icon/report_s.png"
+      },
+      {
+        "pagePath": "pages/call/call",
+        "text": "联系我们",
+        "iconPath": "img/icon/call.png",
+        "selectedIconPath": "img/icon/call_s.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "首页",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "sitemapLocation": "sitemap.json"
+}

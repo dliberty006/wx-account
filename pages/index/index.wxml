@@ -1,0 +1,130 @@
+<view class='header'>
+<view class="title" style='background: #51a284 ;background-size:100% 100%;'>
+    <view style='padding-top:20rpx;'>
+      <view class='waiyuan'>
+        <view class='neiyuan' style='height:{{height}};top:{{top}}'>
+          <image class='wave' src='/img/more/wave.png'/>
+          <image class='wave1' src='/img/more/wave.png'/>
+        </view>
+        <view class='yusuanshengyu'>
+          <view class='shengyu'>预算剩余</view>
+          <view class='shengyumoney'>{{availableMoney}}</view>
+        </view>
+        <view class="yusuan" wx:if="{{endMonth == month}}" bindtap='setbudget'>设置预算</view>
+      </view>    
+      <view class="shuju"> 
+        <view class='fl li pl'>
+          <view class='shuju_title'>{{month}}月支出</view>
+          <view class="shuju_zhichu">{{accountMoney}}元</view>
+         
+        </view>
+        <view class='fl li pl'>
+          <view class='shuju_title'>{{month}}月预算</view>
+          <view class="shuju_yusuan">{{budgetMoney}}元</view>
+        </view>
+        <view class='fl li'>
+           <view class='shuju_title'>{{month}}月收入</view>
+          <view class="shuju_shouru">{{incomeMoney}}元</view>
+        </view>
+      </view>
+    </view>
+      <view class='history'>
+        <picker mode="date" bindchange="changeDate" value="{{date}}"  end="{{endYear}}-{{endMonth}}" fields="month">
+        <image class='fl' src='/img/icon/history.png'></image>
+        <view class='zi fl'>历史记录</view>
+        </picker>
+      </view>
+      <view class='remind' bindtap='setRemind'>
+        <image class='fl' src='/img/icon/remind.png'></image>
+        <view class='zi fl'>设置提醒</view>
+      </view>
+      <view class='email' bindtap='setEmail'>
+        <image class='fl' src='/img/icon/email.png'></image>
+        <view class='zi fl'>备份至邮箱</view>
+      </view>
+</view>
+
+</view>
+
+
+<view class='body'>
+  <view class='body_desc'>
+    <block wx:if="{{descVoList.length == 0}}">
+      <image class='no_record' src='/img/icon/no.png'> </image>
+    </block>
+    <block wx:if="{{descVoList.length != 0}}">
+    <block wx:for="{{descVoList}}" wx:key="time" wx:for-item="item">
+      <view class="body_list" >
+        <view class="body_list_title">
+          <view class='body_list_title_time fl'>{{item.time}}</view>
+          <view class='body_list_title_menu fr'>
+            <text wx:if="{{item.accountMoney}}" style='color:#ff6454;padding-right:72rpx;'>支出：{{item.accountMoney/100}}</text>
+            <text wx:else style='color:#ff6454;padding-right:72rpx;'>支出：0</text> 
+            <text style='color:#51a284;' wx:if="{{item.incomeMoney}}">收入：{{item.incomeMoney/100}}</text>
+            <text style='color:#51a284;' wx:else>收入：0</text>
+          </view>
+        </view>
+        <view class='body_list_desc'>
+          <block wx:for="{{item.recordList}}" wx:key="id" wx:for-item="record" wx:for-index="reIdx">
+
+            <view class='body_list_desc_li'   >
+              <view bindtap='modifyAccount' data-recordid='{{record.id}}' data-parentindex='{{index}}' data-liindex='{{reIdx}}' bindlongpress='delMeng'>
+              <view class='fl '>
+                <view class="first_name {{record.cateType == '0' ? 'red':'green'}}">{{record.firstName}}</view>
+              </view>
+
+              <view class='fr'>
+                <view class='left'>
+                  <view>{{record.cateName}}</view>
+                  <view class='remarks'>{{record.accountRemarks}}</view>
+                </view>
+                <view class='right {{record.cateType == "0" ? "red":"green"}}'><block wx:if="{{record.cateType == '0'}}">-</block>{{record.accountMoney/100}}</view>
+              </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+    </block>
+  </view>
+</view>
+<view class='jiz' bindtap='jiyibi'>
+    <image src='/img/icon/bi.png' />
+    <text >记一笔</text>
+      
+  </view>
+<view class='meng {{showMeng == true ? "":"hide"}}' bindtouchstart='cancelMeng'></view>
+<view class='delete {{showMeng == true ? "":"hide"}}' data-recordid="{{recordId}}">
+  <view class="modify" bindtap='modifyAccount' data-recordid='{{recordId}}'>编辑</view>
+  <view bindtap='delRecord' data-parentindex="{{parentindex}}" data-liindex="{{liindex}}" data-recordid='{{recordId}}'>删除</view>
+</view>
+
+<modal hidden="{{hiddenmodalput}}"  title="设置预算金额" confirm-text="提交" class='setbudget' cancel-text="取消" bindcancel="cancelSetbudget" bindconfirm="setbudgetConfirm">
+    <view class="e_time">{{currentTime}}</view>
+    <input type='number'placeholder="请输入预算金额" maxlength='7' bindinput="changeMoney" value='{{budgetMoney == "--" ? "" : budgetMoney}}'/>
+</modal>
+
+<view class='modal-mask' hidden='{{hiddenModal}}' bindtap='cancelMask'></view>
+<view class='setEmail' hidden='{{hiddenModal}}'>
+  <view class="e_time">{{currentTime}}</view>
+  <view class='e_p'>请输入您的邮箱地址</view>
+  <input class='e_input' type='text' placeholder='请输入您的邮箱' bindinput='changeEmail' maxlength='50' value='{{email}}'></input>
+  <button bindtap='submitEmail' class='e_button'>立即开启备份</button>
+  <view class='e_remark'>开启邮箱备份，系统每月1-3号将前一月记账账单发送至您的邮箱，若无记账记录，将不会发送。</view>
+</view>
+
+<view class='modal-mask' hidden='{{hiddenRemind}}' bindtap='cancelRemind'></view>
+<view class='setEmail' hidden='{{hiddenRemind}}'>
+  <view class="e_time">{{currentTime}}</view>
+  <view class='e_p'>设置提醒时间</view>
+  <picker mode="time" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      <input class='e_input e_remind' type='text' disabled='true'  bindinput='changeRemind'  value='{{remind}}'></input>
+    </view>
+  </picker>
+  <button bindtap='submitRemind' class='e_button'>立即设置</button>
+  <view class='e_remark'>设置提醒时间后(默认20：30)，每天将按照设定时间推送记账提醒，若连续7天无记账记录，则无法提醒。</view>
+</view>
+
+

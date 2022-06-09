@@ -1,0 +1,6 @@
+<view >
+  <image class='callImg' src='/img/icon/call2.jpg'></image> 
+  <view class='callView' >
+    <button class='callBtn' open-type="contact">调戏客服</button>
+  </view>
+</view>

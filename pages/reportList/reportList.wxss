@@ -1,0 +1,73 @@
+.body_title{
+  padding: 10rpx 0 10rpx 20rpx;
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0rpx 5rpx 5rpx #ddd;
+  z-index: 9999;
+  border-top: 1px solid #ddd;
+}
+.body_title .body_title_time {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+}
+.body_desc {
+  margin-top: 105rpx;
+}
+.body_desc .body_list_desc{
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.body_desc .body_list_desc .body_list_desc_li {
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.body_desc .body_list_desc .fl{
+  width: 15%;
+  text-align: center;
+}
+.body_desc .body_list_desc .fl .first_name{
+   width: 80rpx;
+   height: 80rpx;
+   border-radius: 50%;
+   color: #fff;
+   font-size: 50rpx;
+   line-height: 80rpx;
+   margin-top:20rpx;
+}
+.body_desc .body_list_desc .fr{
+  width: 85%;
+  border-bottom: 1px solid #ddd;
+}
+
+.body_desc .body_list_desc .fr .left view{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.body_desc .body_list_desc .fr .left view text {
+  color: #aaa;
+  margin-left: 5rpx;
+}
+.body_desc .body_list_desc .fr .right{
+  font-size: 35rpx;
+  font-weight: 600;
+  padding-right: 20rpx;
+}
+.body_desc .body_list_desc .fr .remarks{
+  color: #aaa;
+}
+
+.body_desc .body_list_desc .fl .red{
+   background-color: #f44455;
+}
+.body_desc .body_list_desc .fr .red{
+  color: #f44455;
+}
+.body_desc .body_list_desc .fl .green{
+   background-color: #1aa783;
+}
