@@ -120,7 +120,7 @@
     <view class='ji_time_li'>
       <view class='w'>
         <text class='ji_time_title'>邮箱：</text>
-        <input class='e_input' type='text' placeholder='请输入您的邮箱' bindinput='changeEmail' maxlength='50' value='{{email}}'></input>
+        <input class='' type='text' placeholder='请输入您的邮箱' bindinput='changeEmail' maxlength='50' value='{{email}}'></input>
       </view>
     </view>
 </view>

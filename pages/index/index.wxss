@@ -547,6 +547,25 @@ body {
 .setEmail .e_remind{
   font-size:50rpx;
 }
+.setEmail .e_p{
+  font-size: 36rpx;
+  margin: 97rpx 83rpx 71rpx;
+  font-weight: 600;
+  text-align: center;
+}
+.setEmail .e_input{
+  width: 398rpx;
+  border: 1rpx solid #333;
+  margin: 0 auto;
+  height: 59rpx;
+  line-height: 59rpx;
+  display:block;
+  border-radius:30rpx;
+  padding-left:30rpx;
+  box-sizing:border-box;
+  text-align: center;
+  font-size: 30rpx;
+}
 .ji_time{
   padding: 20rpx 0;
   margin-top: 50rpx;
