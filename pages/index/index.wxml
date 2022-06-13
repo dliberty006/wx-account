@@ -107,11 +107,25 @@
 
 <view class='modal-mask' hidden='{{hiddenModal}}' bindtap='cancelMask'></view>
 <view class='setEmail' hidden='{{hiddenModal}}'>
-  <view class="e_time">{{currentTime}}</view>
-  <view class='e_p'>请输入您的邮箱地址</view>
-  <input class='e_input' type='text' placeholder='请输入您的邮箱' bindinput='changeEmail' maxlength='50' value='{{email}}'></input>
-  <button bindtap='submitEmail' class='e_button'>立即开启备份</button>
-  <view class='e_remark'>开启邮箱备份，系统每月1-3号将前一月记账账单发送至您的邮箱，若无记账记录，将不会发送。</view>
+  <view class="ji_time">
+    <view class='ji_time_li'>
+        <view class='w'>
+        <picker mode="date" style='display:inline-block;'  value="{{emailDate}}"  end="{{endYear}}-{{endMonth}}" fields="month" start="2018-01-01" bindchange="bindEmailDateChange">
+          <view class="picker">
+            <text>月份：</text><text class='ji_time_title'> {{emailDate}}</text>
+          </view>
+        </picker>
+        </view>
+      </view>
+    <view class='ji_time_li'>
+      <view class='w'>
+        <text class='ji_time_title'>邮箱：</text>
+        <input class='e_input' type='text' placeholder='请输入您的邮箱' bindinput='changeEmail' maxlength='50' value='{{email}}'></input>
+      </view>
+    </view>
+</view>
+  <button bindtap='submitEmail' class='e_button'>立即备份</button>
+  <view class='e_remark'>备份后，系统将在5分钟左右发送账单至您的邮箱，若无记账记录，将不会发送。</view>
 </view>
 
 <view class='modal-mask' hidden='{{hiddenRemind}}' bindtap='cancelRemind'></view>

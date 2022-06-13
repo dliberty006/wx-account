@@ -307,7 +307,7 @@
   position: fixed;
   width: 141rpx;
   height: 141rpx;
-  bottom: 59rpx;
+  bottom: 60rpx;
   right: 27rpx;
   border-radius: 50%;
   background: #51a284;
@@ -524,25 +524,7 @@ body {
   right: 10rpx;
   font-size: 18rpx;
 }
-.setEmail .e_p{
-  font-size: 36rpx;
-  margin: 97rpx 83rpx 71rpx;
-  font-weight: 600;
-  text-align: center;
-}
-.setEmail .e_input{
-  width: 398rpx;
-  border: 1rpx solid #333;
-  margin: 0 auto;
-  height: 59rpx;
-  line-height: 59rpx;
-  display:block;
-  border-radius:30rpx;
-  padding-left:30rpx;
-  box-sizing:border-box;
-  text-align: center;
-  font-size: 30rpx;
-}
+
 .setEmail .e_button{
   width: 337rpx;
   height: 66rpx;
@@ -564,4 +546,62 @@ body {
 }
 .setEmail .e_remind{
   font-size:50rpx;
+}
+.ji_time{
+  padding: 20rpx 0;
+  margin-top: 50rpx;
+}
+.ji_time .ji_time_li{
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 20rpx;
+  position: relative;
+}
+.ji_time .ji_time_li .picker{
+  position: absolute;
+  top: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.ji_time .ji_time_li .picker .ji_time_title{
+  border: 1px solid #ddd;
+  width: 300rpx;
+  border-radius: 30rpx;
+  padding: 0 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  position: absolute;
+}
+
+.ji_time .ji_time_remark{
+  position: absolute;
+  top: 10rpx;
+  left: 0;
+} 
+.ji_time .ji_time_li input{
+  position: absolute;
+  top: 20rpx;
+  border: 1px solid #ddd;
+  width: 300rpx;
+  border-radius: 30rpx;
+  padding: 0 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.ji_time .ji_time_li image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 16rpx;
+  display: inline-block;
+  position: relative;
+  top: 5rpx;
+}
+.ji_time .ji_time_li .ji_time_num{
+ position:absolute;
+  top:0;
+  right:36rpx;
+  color:#bbb;
+  height:100%;
+
 }

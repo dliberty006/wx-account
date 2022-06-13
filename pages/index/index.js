@@ -32,7 +32,10 @@ Page({
     multiIndex:[0,0],
     backUrl: 'http://image.dliberty.com/ZG9jX2ZpbGUxNTMxNDcwNjQwNDgx.jpg',
     callback:null,
-    currentTime:''
+    currentTime:'',
+    emailDate:'',
+    emailYear:null,
+    emailMonth:null
   },
 
   /**
@@ -188,7 +191,7 @@ Page({
 
     if (that.compareVersion(version, '2.8.2') >= 0) {
       wx.requestSubscribeMessage({
-        tmplIds: ['SQXoV8NQwi4RGp1H_sIq60erNulbK56yaob6P1pJ1fE'],
+        tmplIds: ['LTG010rHiE_0YW2gNQkA77U9bDp8wPQ1KrZ4_TTn7A8'],
         success(res) {
           if (JSON.stringify(res).toString().indexOf('accept') > -1) {
             that.subscribe();
@@ -342,6 +345,16 @@ Page({
     this.loadHeadData();
     this.loadData();
   },
+  bindEmailDateChange:function(e) {
+    var date = e.detail.value;
+    var year = date.substring(0, 4);
+    var month = date.substring(5, 7);
+    this.setData({
+      emailDate:date,
+      emailYear:year,
+      emailMonth:month
+    });
+  },
   setbudget:function(e) {
     let that = this
     that.setData({
@@ -480,37 +493,49 @@ Page({
   },
   submitEmail:function(){
     let that = this;
+    let emailYear = that.data.emailYear
+    let emailMonth = that.data.emailMonth
+    if (!emailYear || !emailMonth) {
+      wx.showToast({
+        title: '请选择日期',
+        icon: "none"
+      })
+      return ;
+    }
     let email = this.data.email;
     let reg = new RegExp("^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$");
     if (reg.test(email)){
       wx.request({
-        url: getApp().globalData.host + '/account-web/weixin/modifyEmail',
+        url: getApp().globalData.host + '/account-web/email/create',
         dataType: 'json',
         data: {
           'session': wx.getStorageSync('3rd_session'),
-          'email': email
+          'email': email,
+          'year':parseInt(emailYear),
+          'month':parseInt(emailMonth)
         },
         header: {
-          "Content-Type": "applciation/json"
+          "Content-Type": "application/x-www-form-urlencoded"
         },
-        method: "GET",
+        method: "POST",
         success: function (result) {
-          if (result.data.code == '1') {
-            wx.showModal({
-              title: '提示',
-              content: result.data.message,
-              showCancel: false,
-              success: function (res) {
-              }
-            })
-            
-          } else {
+          if (result.data.code == '0') {
             that.setData({
               hiddenModal: true
             })
             wx.showModal({
               title: '提示',
-              content: '设置成功',
+              content: '备份成功，稍后可在邮件记录里面查询',
+              showCancel: false,
+              success: function (res) {
+              }
+            })
+            
+            
+          } else {
+            wx.showModal({
+              title: '提示',
+              content: result.data.message,
               showCancel: false,
               success: function (res) {
               }
@@ -520,12 +545,9 @@ Page({
         }
       })
     }else{
-      wx.showModal({
-        title: '提示',
-        content: '请输入正确格式的邮箱',
-        showCancel: false,
-        success: function (res) {
-        }
+      wx.showToast({
+        title: '请输入正确格式的邮箱',
+        icon: "none"
       })
     }
     

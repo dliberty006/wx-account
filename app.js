@@ -71,6 +71,6 @@ App({
   globalData: {
     userInfo: null,
     isBackInfo: false,
-    host:'https://jizhang.taoyuer.com'
+    host:'https://www.dliberty.com'
   }
 })
